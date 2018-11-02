@@ -21,6 +21,6 @@ src/test:
             --multi 1 --language Java
             --fragment "@Test" --count 6 --exact
 # --> check the number of commits beyond a threshold
---commits 10
+--commits 17
 # --> check that the program executes correctly
 --command "gradle -q --console plain run" --executes
