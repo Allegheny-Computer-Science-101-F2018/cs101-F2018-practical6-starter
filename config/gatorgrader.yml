@@ -1,0 +1,26 @@
+---
+name: cmpsc-101-fall-2018-practical6
+break: true
+indent: 4
+---
+# --> check the source code for various characteristics
+# note that without an "--exact" the check is an "at least"
+src/main:
+    java:
+        practicalsix/experiment/Experiment.java:
+            --multi 2 --language Java
+            --fragment "println(" --count 8 --exact
+src/main:
+    java:
+        practicalsix/experiment/RunCampaign.java:
+            --multi 4 --language Java
+            --fragment "println(" --count 3 --exact
+src/test:
+    java:
+        practicalsix/TestArithmeticComputations.java:
+            --multi 1 --language Java
+            --fragment "@Test" --count 6 --exact
+# --> check the number of commits beyond a threshold
+--commits 10
+# --> check that the program executes correctly
+--command "gradle -q --console plain run" --executes
